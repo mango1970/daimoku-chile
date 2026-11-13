@@ -61,6 +61,14 @@ La portada está en `/` y la práctica en `/app/`. No abras `dist/index.html` co
 
 Sube el contenido de `dist/` a la raíz de un alojamiento HTTPS. Tras cambiar archivos, actualiza el parámetro `?v=` en `dist/app/index.html` y el nombre de caché en `dist/sw.js`.
 
+## Desarrollo
+
+No hay paso de compilación: `dist/` es a la vez código fuente y artefacto publicable. Si en el futuro se incorpora un compilador, el código debería moverse a `src/` y `dist/` pasar a ser salida generada. Al modificar archivos, recuerda actualizar el `?v=` correspondiente y el nombre de caché del service worker.
+
+## Licencia
+
+MIT — ver `LICENSE`. Cubre el código del proyecto. Las fotografías, el contorno de Natural Earth y jsPDF conservan las licencias indicadas en «Créditos y aviso».
+
 ## Créditos y aviso
 
 - Contorno de Chile: Natural Earth (dominio público).
