@@ -1,0 +1,14 @@
+* text=auto
+
+# Windows: los lotes deben conservar CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binarios
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.pdf binary
+*.woff2 binary

@@ -1,0 +1,49 @@
+DAIMOKU CHILE - PROYECTO COMPLETO
+
+Incluye la landing, la PWA, el mapa y su zoom, las fotografías,
+los modos de color, las exportaciones y los reconocimientos en PDF.
+
+ABRIR EN WINDOWS
+1. Extrae el ZIP completo en una carpeta de tu PC.
+2. Haz doble clic en INICIAR.cmd.
+3. La página se abrirá en tu navegador. Mantén abierta la ventana
+   del servidor mientras usas la app. Para cerrarlo, pulsa Ctrl+C.
+
+Requisito: Python 3 instalado. No requiere instalar paquetes.
+Si no tienes Python, puedes obtenerlo en https://www.python.org/downloads/
+
+ABRIR EN MAC O LINUX
+Desde una terminal situada en esta carpeta:
+    python3 iniciar.py
+
+ALTERNATIVA MANUAL
+    python -m http.server 8765 --bind 127.0.0.1 --directory dist
+Luego abre http://127.0.0.1:8765/
+
+La portada está en / y la práctica en /app/.
+No abras index.html con doble clic: el micrófono y la instalación
+PWA necesitan que el sitio se sirva desde localhost o HTTPS.
+
+TUS REGISTROS PERSONALES
+Este ZIP contiene el programa, no los datos guardados en tu navegador.
+Para conservar tus sesiones e intenciones, usa Bitácora > Descargar
+bitácora > Respaldo técnico en JSON en la versión que utilizas.
+La versión local tiene un almacenamiento separado del sitio alojado.
+El proyecto incluye exportación, pero no un importador automático.
+
+EDITAR O ALOJAR EN OTRO SERVIDOR
+Todo el código está dentro de dist/. Es un sitio estático HTML/CSS/JS:
+no necesita compilación ni una base de datos. Publica el contenido de
+dist/ en la raíz de un alojamiento HTTPS para usarlo desde celulares.
+Los datos y la generación de PDF se procesan en el dispositivo.
+
+FOTOGRAFÍAS Y BIBLIOTECAS
+Conserva los créditos y las licencias de dist/assets/photo-credits.json
+y dist/vendor/jspdf-LICENSE.txt. Más información en DETALLES-TECNICOS.md.
+
+Durante la práctica la app pide mantener la pantalla encendida. Si el
+dispositivo la apaga o sales de la app, el tiempo ausente se suma al
+volver con tu ritmo; el aviso permite deshacerlo.
+
+El modo con voz es estimado y no reconoce palabras. Esta aplicación
+es independiente y no cuenta con afiliación ni aval de SGI.
