@@ -29,13 +29,17 @@ Este ZIP contiene el programa, no los datos guardados en tu navegador.
 Para conservar tus sesiones e intenciones, usa Bitácora > Descargar
 bitácora > Respaldo técnico en JSON en la versión que utilizas.
 La versión local tiene un almacenamiento separado del sitio alojado.
-El proyecto incluye exportación, pero no un importador automático.
+El proyecto incluye exportación e importación: en Bitácora > Importar
+respaldo puedes fusionar o reemplazar tus datos desde un archivo JSON.
+Antes de reemplazar se descarga una copia de seguridad de lo actual.
 
 EDITAR O ALOJAR EN OTRO SERVIDOR
 Todo el código está dentro de dist/. Es un sitio estático HTML/CSS/JS:
 no necesita compilación ni una base de datos. Publica el contenido de
 dist/ en la raíz de un alojamiento HTTPS para usarlo desde celulares.
 Los datos y la generación de PDF se procesan en el dispositivo.
+El repositorio incluye vercel.json para publicar en Vercel usando dist/
+como directorio de salida.
 
 FOTOGRAFÍAS Y BIBLIOTECAS
 Conserva los créditos y las licencias de dist/assets/photo-credits.json
@@ -47,3 +51,5 @@ volver con tu ritmo; el aviso permite deshacerlo.
 
 El modo con voz es estimado y no reconoce palabras. Esta aplicación
 es independiente y no cuenta con afiliación ni aval de SGI.
+
+Contacto: Mauricio Núñez · contacto@mauricionunez.cl
