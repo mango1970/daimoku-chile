@@ -4,8 +4,8 @@ Actualizado: 2026-11-15
 
 ## Estado actual
 
-- Repositorio en `main`, sin remoto configurado. Último commit local: `3051e94` («Corrige tildes en la exportación CSV»).
-- Antes de esta sesión el árbol estaba limpio. Los cambios de hoy quedan sin commit hasta que se solicite.
+- Repositorio en `main`, sin remoto configurado. Último commit local: `5c049ac` («Añade importación de respaldo y prepara Vercel»).
+- Los cambios de iconos de esta sesión quedan sin commit hasta que se soliciten.
 - Producto: landing en `/`, PWA en `/app/`, mapa de 1.000 cuadros, exportaciones CSV/PDF/JSON, service worker, modo offline e importación de respaldo.
 - El sitio es estático: se publica el contenido de `dist/` tal cual, sin compilación.
 - Fase 0 ejecutada en navegador local. No sustituye las pruebas en teléfonos reales.
@@ -20,7 +20,7 @@ Actualizado: 2026-11-15
 
 ## Hecho en esta sesión
 
-- Revisión de git: rama `main`, árbol limpio al inicio, sin remoto. El último commit local es `3051e94`.
+- Revisión de git: rama `main`, árbol limpio al inicio, sin remoto. El último commit local es `5c049ac`.
 - Importación JSON en Bitácora:
   - Botón «Importar respaldo» y lector de archivos `.json`.
   - Validación de sesiones, fechas, duraciones, modos, intenciones y recorridos archivados.
@@ -33,20 +33,26 @@ Actualizado: 2026-11-15
   - Metas `apple-mobile-web-app-capable`, `apple-mobile-web-app-title`, `apple-mobile-web-app-status-bar-style` y `mobile-web-app-capable`.
   - Icono `dist/assets/icon-180.png` y enlaces `apple-touch-icon` de 180 y 192.
   - Icono de 180 agregado al precache del service worker.
+- Icono corregido:
+  - El SVG corregido, con la hoja central, se conserva en `design/icon-source.svg`; la versión con margen para maskable está en `design/icon-maskable.svg`.
+  - `dist/assets/icon.svg` quedó cuadrado, con fondo blanco y margen; los PNG se regeneraron desde esa versión.
+  - El icono se muestra en el encabezado de la landing, en la marca de la app y en el pie, con un aumento del 50 % respecto del tamaño anterior.
+  - Se separaron iconos `any` (192/512) y `maskable` (192/512) en el manifest.
+  - PNG de 180, 192, 512 y maskable de 192/512; URLs con `?v=4` y precache actualizado.
 - Créditos de autoría en el pie de la landing y de la app.
 - Vercel:
   - `vercel.json` con `outputDirectory: "dist"` y `trailingSlash`.
   - Caché: HTML y JS/CSS con revalidación, `sw.js` sin caché, manifest con su MIME, fotos con caché larga y assets/descargas con caché moderada.
   - Seguridad: `nosniff`, `Referrer-Policy`, `Permissions-Policy` y `X-Frame-Options`.
 - Documentación actualizada: README, LEEME, DETALLES-TECNICOS y este archivo.
-- Versiones actualizadas: `app.js?v=12`, `exports.js?v=12`, caché `daimoku-chile-v13-import`.
+- Versiones actualizadas: `app.js?v=12`, `exports.js?v=12`, `landing.css?v=10`, `style.css?v=13`, caché `daimoku-chile-v17-logo`.
 
 ## Verificación Fase 0
 
 Ejecutada contra `http://127.0.0.1:8765` con Chromium headless:
 
 - Sintaxis: `node --check` correcto en `app.js`, `exports.js`, `map-controls.js`, `landing.js`, `sw.js`, `chile-map.js` y `photos.js`.
-- Landing: carga correcta, 0 errores de consola, 0 solicitudes fallidas, 7 enlaces a `/app/`, creditos y metadatos iOS presentes.
+- Landing: carga correcta, 0 errores de consola, 0 solicitudes fallidas, 7 enlaces a `/app/`, créditos y metadatos iOS presentes.
 - App: carga correcta, 0 errores de consola, 0 solicitudes fallidas, mapa con 1.000 celdas.
 - Importación:
   - Fusión de prueba: 2 sesiones, 1.500 daimoku, 1 intención y 1 recorrido archivado.
@@ -54,7 +60,8 @@ Ejecutada contra `http://127.0.0.1:8765` con Chromium headless:
   - Reemplazo de prueba: 1 sesión y 250 daimoku; se solicitó la descarga de la copia de seguridad previa.
   - Archivo no reconocido: rechazado con el aviso «El archivo no parece un respaldo de Daimoku Chile».
 - Offline: tras la primera carga, la app se recargó sin conexión con el mapa de 1.000 celdas y el service worker controlando la página.
-- Service worker: registro activo en `/sw.js` y caché `daimoku-chile-v13-import`.
+- Iconos: manifest con iconos `any` y `maskable`, todos con respuesta 200; favicon SVG cuadrado con respuesta 200; 180/192/512 y maskables con dimensiones correctas; logo visible en landing y app con la hoja central.
+- Service worker: registro activo en `/sw.js` y caché `daimoku-chile-v17-logo`.
 - `vercel.json`: JSON válido.
 - Pendiente: probar en Android e iPhone reales, con instalación, micrófono, PDF, descargas y actualización del service worker.
 
@@ -76,10 +83,11 @@ Ejecutada contra `http://127.0.0.1:8765` con Chromium headless:
 
 ## Versiones y caché
 
-- `landing.css` / `landing.js` / `chile-map.js` / `photos.js`: `v=8`.
-- `style.css`: `v=11`.
+- `landing.css`: `v=10`; `landing.js` / `chile-map.js` / `photos.js`: `v=8`.
+- `style.css`: `v=13`.
 - `map-controls.js`: `v=10`.
 - `exports.js` / `app.js`: `v=12`.
-- Caché del service worker: `daimoku-chile-v13-import`.
+- Iconos y manifest: `?v=4`.
+- Caché del service worker: `daimoku-chile-v17-logo`.
 
 Estas versiones se actualizan al cierre de cada sesión.

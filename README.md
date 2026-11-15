@@ -33,6 +33,7 @@ La portada está en `/` y la práctica en `/app/`. No abras `dist/index.html` co
 │   ├── assets/            # mapa, fotografías, iconos y créditos
 │   ├── downloads/         # guía rápida en PDF
 │   └── vendor/            # jsPDF 4.2.1 (MIT)
+├── design/                # fuentes editables de los iconos
 ├── iniciar.py             # servidor local
 ├── INICIAR.cmd            # lanzador para Windows
 ├── LEEME.txt              # instrucciones para quien usa la app

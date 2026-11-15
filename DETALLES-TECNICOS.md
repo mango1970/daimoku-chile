@@ -36,6 +36,8 @@ Importación de respaldo: Bitácora permite leer un JSON exportado por la app. S
 
 iOS: la landing y la app incluyen metas de aplicación web, icono de 180 px y el icono de 192 px. La instalación sigue siendo manual desde Safari («Compartir > Añadir a pantalla de inicio»); queda pendiente probar micrófono, descargas y uso offline en un iPhone real.
 
+Iconos: el SVG corregido, con la hoja central, se conserva en `design/icon-source.svg`. La versión publicada (`dist/assets/icon.svg`) usa un lienzo cuadrado con fondo blanco y margen de seguridad; los PNG se generan desde ahí. El mismo icono se muestra en el encabezado de la landing, en la marca de la app y en su pie, además del favicon y la PWA. El manifest separa iconos `any` (192/512) y `maskable` (192/512, con mayor margen), y el service worker precarga ambos. Las URLs usan `?v=4` para evitar íconos antiguos en caché.
+
 Publicación: `vercel.json` fija `dist` como salida, `trailingSlash`, cabeceras de caché para HTML, service worker, manifest y assets, y cabeceras de seguridad (`nosniff`, `Referrer-Policy`, `Permissions-Policy` y `X-Frame-Options`). La CSP queda pendiente porque el HTML usa scripts y estilos inline.
 
 Actualización de lanzamiento: landing en /; práctica en /app/; compatibilidad con enlaces anteriores y PWA instalada; PDF de guía descargable. Zoom, arrastre y seguimiento, cuadros completos superpuestos al contorno y tricolor. CSV, PDF de bitácora, reconocimiento con mapa y sesiones. Reinicio al millón condicionado a confirmación de reconocimiento guardado, con archivo atómico del recorrido anterior. Los datos siguen en la misma clave y origen. jsPDF 4.2.1 se distribuye localmente con su licencia MIT.
