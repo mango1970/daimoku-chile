@@ -1,4 +1,4 @@
-const CACHE='daimoku-chile-v17-logo';
+const CACHE='daimoku-chile-v19-map-scroll';
 const FILES=['/','/index.html','/app/','/app/index.html','/landing.css','/landing.js','/style.css','/app.js','/map-controls.js','/exports.js','/vendor/jspdf.umd.min.js','/assets/chile-map.js','/assets/photos.js','/assets/photo-credits.json','/assets/photos/andes-hero.webp','/assets/photos/zone-0.webp','/assets/photos/zone-1.webp','/assets/photos/zone-2.webp','/assets/photos/zone-3.webp','/assets/photos/zone-4.webp','/assets/photos/zone-5.webp','/assets/photos/zone-6.webp','/downloads/guia-daimoku-chile.pdf','/manifest.webmanifest','/assets/icon.svg','/assets/icon-180.png','/assets/icon-192.png','/assets/icon-512.png','/assets/icon-maskable-192.png','/assets/icon-maskable-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('daimoku-chile-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

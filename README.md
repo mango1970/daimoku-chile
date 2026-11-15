@@ -48,12 +48,12 @@ La portada está en `/` y la práctica en `/app/`. No abras `dist/index.html` co
 
 - Tres modos de conteo: voz (estima por actividad sonora), cronómetro y manual.
 - Calibración del ritmo personal y umbral de sensibilidad.
-- Mapa de 1.000 cuadros sobre el contorno de Chile, con zoom, arrastre y seguimiento del avance.
+- Mapa de 1.000 cuadros sobre el contorno de Chile, con zoom, arrastre y seguimiento del avance; en móvil la página se desplaza sobre el mapa en vista completa y el arrastre se activa al ampliar.
 - Siete estaciones culturales con fotografías y reflexiones originales.
 - Exportación CSV, bitácora en PDF, reconocimiento con mapa y respaldo JSON; importación de respaldo desde Bitácora.
 - PWA instalable y uso sin conexión tras la primera carga.
 - Temas claro, semioscuro y oscuro, con preferencia persistente.
-- Continuidad de sesión: si sales de la app o se apaga la pantalla, el tiempo ausente se suma al volver y puede deshacerse.
+- Continuidad de sesión: si sales de la app o se apaga la pantalla, el tiempo ausente se suma al volver y puede deshacerse. Si el equipo entra en reposo con la página visible, al volver se pregunta si seguiste practicando.
 
 ## Datos y privacidad
 
